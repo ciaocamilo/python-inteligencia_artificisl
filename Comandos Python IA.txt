@@ -1,0 +1,46 @@
+#### Python entorno para IA con GPU ###
+
+# Desactivar y activar entorno
+conda deactivate
+conda activate ai-gpu
+
+# Eliminar entorno
+conda remove -n ai-gpu --all
+
+# Crear entorno e instalar tensorflow y pytorch
+conda create -n ai-gpu python=3.10 -y
+conda activate ai-gpu
+pip install --upgrade pip
+pip install tensorflow==2.15.1
+pip uninstall -y ml-dtypes
+pip install ml-dtypes==0.3.1
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install pyarrow -y
+conda install pandas -y
+conda install seaborn -y
+conda install scikit-learn -y
+pip install tensorflow-datasets
+pip install sympy==1.13.1
+conda install opencv -y
+pip install tensorflow-hub
+
+# Nuevo entorno
+conda create -n tf-gpu python=3.10 -y
+conda activate tf-gpu
+pip install --upgrade pip
+pip install numpy==1.26.4
+pip install tensorflow==2.15.1
+pip install tensorflow-hub==0.16.1
+pip install matplotlib pillow scipy
+conda install opencv -y
+
+
+
+
+
+conda create -n tf-gpu python=3.10 -y
+conda activate tf-gpu
+pip install tensorflow==2.15.1 tensorflow-hub==0.15.0
+pip install matplotlib
+conda install pillow -y
+conda install scipy -y
